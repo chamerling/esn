@@ -8,13 +8,14 @@ MAINTAINER Linagora Folks <openpaas@linagora.com>
 ARG VERSION=0.0.0
 ARG ITERATION=1
 ARG TREEISH=master
+ARG REPO=https://ci.linagora.com/linagora/lgs/openpaas/esn.git
 
 RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash - && \
     yum groupinstall -y 'Development Tools' && \
     yum install -y epel-release && \
     yum install -y git rpm-build nodejs ImageMagick cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel giflib-devel
 
-RUN git clone --no-single-branch --depth=1 https://ci.linagora.com/linagora/lgs/openpaas/esn.git /package/usr/share/openpaas
+RUN git clone --no-single-branch --depth=1 $REPO /package/usr/share/openpaas
 
 ADD common/openpaas/package /package
 ADD redhat/7/openpaas/package /package
