@@ -26,8 +26,6 @@ stages:
 
 .build-pkg-tpl: &build-pkg-tpl
   <<: *curl-tpl
-  only:
-    - master@linagora/lgs/openpaas/esn
   except:
     variables:
       - $SKIP_BUILD_PKG
@@ -247,7 +245,7 @@ midway-backend-test:
       -F "variables[DOCKERFILE]=debian/stretch/openpaas/Dockerfile"
       https://ci.linagora.com/api/v4/projects/338/trigger/pipeline | jq .
 
-.build_pkg_rpm_openpaas:
+build_pkg_rpm_openpaas:
   <<: *build-pkg-tpl
   stage: build
   script:
