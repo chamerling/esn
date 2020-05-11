@@ -48,7 +48,6 @@ RUN fpm \
   --rpm-user openpaas \
   --rpm-group openpaas \
   --rpm-dist el7 \
-  --depends nginx \
   --depends nodejs \
   --depends ImageMagick \
   --depends cairo \
