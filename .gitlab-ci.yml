@@ -147,7 +147,7 @@ unit-storage-test:
     - grunt -v --chunk=1 gitlab-test-unit-storage
     - grunt -v --chunk=1 gitlab-test-modules-unit-storage
 
-modules-midway-test:
+.modules-midway-test:
   <<: *test-template
   services:
     - name: docker.elastic.co/elasticsearch/elasticsearch:6.3.2
@@ -172,7 +172,7 @@ modules-midway-test:
   script:
     - grunt -v --chunk=1 gitlab-test-modules-midway
 
-midway-backend-test:
+.midway-backend-test:
   <<: *test-template
   services:
     - name: docker.elastic.co/elasticsearch/elasticsearch:6.3.2
