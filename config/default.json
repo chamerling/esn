@@ -119,6 +119,7 @@
     "linagora.esn.core.wsserver",
     "linagora.esn.cron",
     "linagora.esn.davproxy",
+    "linagora.esn.dashboard",
     "linagora.esn.davserver",
     "linagora.esn.dav.import",
     "linagora.esn.digest.daily",
